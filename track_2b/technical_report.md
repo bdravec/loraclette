@@ -1,16 +1,20 @@
-# Technical report — `project name`
+# Technical report — LoRAclette
 
 A deeper write-up than the README: what you built, how it works, and what the
 numbers say.
 
-- **Track:** `Track 2B — project name`
+- **Track:** Track 2B — LoRAclette
 - **Event:** Online
-- **Team:** `team name` — `member`, `member`, `member`
+- **Team:** LoRAclette — Barbara Dravec, Mariam
 - **Demo:** `link to video`
 
 ## 1. Summary
 
 The problem, your approach, and the headline result in one paragraph.
+
+<!-- Draft from the Devpost submission (Inspiration); rewrite once we have results. -->
+In earlier work, we tested whether SKILL.md files (instruction files that steer AI agents) make Apertus better at software engineering, using benchmarks for merge conflict resolution, secure code generation and program repair. Skills mostly changed the form of Apertus's answers, not its ability. Only Apertus-8B on ConGra improved; everything else stayed flat or got worse.
+So we asked: if prompts only reshape output, can a lightweight LoRA adapter change what Apertus can actually do?
 
 ## 2. Architecture
 
@@ -30,7 +34,7 @@ List any external dependencies, and separate build time from runtime.
 
 ## 3. Use of Apertus
 
-- **Model:** `e.g. swiss-ai/Apertus-v1.5-8B`
+- **Model:** `swiss-ai/Apertus-v1.5-8B`
 - **How it is used:** inference | fine-tuning | evaluation | red-teaming | agents / tool use
 - **Where it runs:** `local weights, hosted endpoint, ...`
 

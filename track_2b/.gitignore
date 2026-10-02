@@ -25,3 +25,10 @@ build/
 .DS_Store
 .idea/
 .vscode/
+
+# LoRAclette: full training data and run outputs stay local.
+# data/ itself is committed (max 100 MB) — only the small demo sample goes there.
+data/raw/
+data/processed/
+outputs/
+wandb/
