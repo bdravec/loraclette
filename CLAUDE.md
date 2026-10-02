@@ -28,6 +28,8 @@ answers, not its ability. The one clear gain was Apertus-8B **v1** on ConGra: +7
 Solved = max(edit similarity, winnowing) > 0.8, as in the thesis.
 
 ## Hard rules
+- **Secrets live only in `track_2b/.env`** (gitignored; template in `.env.example`). Never print,
+  echo, log or commit the API key, and never paste it into chat, issues or the report.
 - **Template structure is fixed.** `track_2b/` is the project root. Don't rename or move its files
   (`README.md`, `technical_report.md`, `Makefile`, `src/`, `data/`, `docs/`). Don't edit
   `track_2b/README.md`; that's the organisers' challenge text. Our code goes in `track_2b/src/`.
@@ -68,6 +70,11 @@ air-gapped, or sovereign Swiss cloud; say which in the report.
 uv sync
 uv run python src/loraclette/train.py --config src/configs/train/lora_r8_baseline.yaml
 ```
+**CSCS inference API** (`https://api.inference.cscs.ch/v1`, OpenAI-compatible, key in `.env`)
+serves both `swiss-ai/Apertus-8B-Instruct-2509` (v1) and `swiss-ai/Apertus-v1.5-8B`, so baselines
+run there with no local GPU. It **cannot serve our adapter** (no private models), so LoRA evals
+run locally.
+
 vLLM runs in a **separate** environment (it pins its own torch). Start it yourself in your own
 shell, not from a Claude background job.
 
