@@ -129,6 +129,12 @@ python sweep_adapters.py --train train.jsonl --val val.jsonl \
 
 The first CSV row is the base model without adapters, as a baseline. Like the training script, the sweep was tested on a small random Apertus model only.
 
+## Next Steps
+1. Train and compare adapters in Python: Run the sweep to find out whether adapters help on your merge task and which positions matter. Until you know that, porting is wasted work.
+2. Clone and adapt code: Add winning adapter config to vLLM's ApertusDecoderLayer (https://github.com/vllm-project/vllm/blob/main/vllm/model_executor/models/apertus.py).
+3. Port only the winning configuration.
+4. Check the port against Python: Feed the same prompt to both and confirm the outputs match, because vLLM wires the norm and residual differently and a silent mismatch is easy to introduce.
+
 ## Sources
 
 - [Apertus v1 technical report (arXiv 2509.14233)](https://arxiv.org/abs/2509.14233)
