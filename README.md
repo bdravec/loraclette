@@ -2,7 +2,7 @@
 
 Apertus is a fully open, multilingual LLM from EPFL, ETH Zurich and CSCS. It is a dense, decoder-only transformer released in two sizes, 8B and 70B.
 
-![Apertus architecture with adapter positions](apertus_architecture_adapters.png)
+![Apertus architecture with adapter positions] (apertus_architecture_adapters.png)
 
 ## Pipeline
 
